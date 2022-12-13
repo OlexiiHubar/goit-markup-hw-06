@@ -672,6 +672,15 @@ img {
     transform: translate(-100%, -50%)  rotate(180deg)  ;
 }
 
+.form-title {
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+
+}
 
 .modal {
     position: absolute;
@@ -710,14 +719,24 @@ img {
     fill: currentColor;
 }
 
+.button-close:hover .icon-close, 
+.button-close:focus .icon-close {
+    fill: var(--accent)  
+}
+
 .modal-form-field {
     display: flex;
     flex-direction: column;
+    position: relative;
     outline: 1px solid red ;
 }
 
 .modal-form-field:not(:last-child){
     margin-bottom: 10px;
+}
+
+.modal-form-field:focus-within label {
+    color: var(--accent);
 }
 
 .modal-form-field label {
@@ -738,15 +757,47 @@ img {
     
 }
 
-.form-input:focus {
-    border-color: var(--accent);
+.modal-form-field input {
+    padding-left: 42px;
 }
+
+ .form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    pointer-events: none;  
+}
+
+
+.form-input:hover,
+.form-input:focus{
+    border-color: var(--accent);
+    outline: none;
+}
+
+.form-input:hover + .form-icon,
+.form-input:focus + .form-icon {
+    fill: var(--accent);
+}
+
+
 
 .modal-form-field textarea {
     padding: 12px 16px;
-    height: 138px;
+    height: 120px;
 }
 
+.modal-form-field .checkbox {
+    appearance: none;
+    position: absolute;
+    border: 0;
+    padding: 0;
+}
+
+.policy-link {
+    color: var(--accent);
+    
+}
 /* Портфоліо */
 
 /* Фільтр */

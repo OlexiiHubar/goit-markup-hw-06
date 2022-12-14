@@ -402,11 +402,18 @@
                     <label class="form-label" for="comment">Коментар</label>
                     <textarea class="form-input" name="comment" id="comment" placeholder="Введіть текст"></textarea>
                 </div>
-                <div class="modal-form-field">
-                    <input class="checkbox" type="checkbox" name="policy" id="policy">
-                    <label for="policy">Погоджуюся з розсилкою та приймаю <a href="" class="policy-link">Умови договору</a></label>
+                <div class="modal-form-field checkbox-form">
+                    <input class="policy-checkbox" type="checkbox" name="policy" id="policy">
+                    <label class="policy-label" for="policy">
+                        <span class="checkbox-icon">
+                            <svg class="checkbox-checked" width="16" height="15">
+                                <use href="./images/icons.svg/sprite.svg#icon-check"></use>
+                            </svg>
+                        </span>
+                        Погоджуюся з розсилкою та приймаю<a href="" class="policy-link">Умови договору</a>
+                    </label>
                 </div>
-                <button type="submit">Відправити</button>
+                <button type="submit" class="hero-btn">Відправити</button>
             </form>
             <button type="button" class="button-close btn" data-modal-close>
                 <svg class="icon-close" width="18" height="18">

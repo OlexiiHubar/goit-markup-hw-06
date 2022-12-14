@@ -37,6 +37,9 @@
     --backdrop-color: rgba(0, 0, 0, 0.2);
     --transparent-background: transparent;
     --btn-close-border: rgba(0, 0, 0, 0.1);
+    --hero-sahdow-btn: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    --check-box-color: rgba(33, 33, 33, 1);
+    --placeholder-color: rgba(117, 117, 117, 0.5);
 }
 .list {
     list-style: none;
@@ -256,14 +259,14 @@ img {
     color: var(--white-color);
     background-color: var(--accent);
 
-    transition: color var(--transition-time) var(--transition-cubic),
-                background-color var(--transition-time) var(--transition-cubic);
+    transition: box-shadow var(--transition-time) var(--transition-cubic);
+                
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-    color: var(--accent);
-    background-color: var(--white-color);
+    box-shadow: var(--hero-sahdow-btn) 
+    
 }
 
 /* Особливості компанії */
@@ -690,7 +693,7 @@ img {
 
     padding: 40px;
     width: 528px;
-    min-height: 581px;
+    height: 581px;
 
     border-radius: 4px;
     background-color: var(--white-color);
@@ -728,15 +731,19 @@ img {
     display: flex;
     flex-direction: column;
     position: relative;
-    outline: 1px solid red ;
+    /* outline: 1px solid red ; */
 }
 
 .modal-form-field:not(:last-child){
     margin-bottom: 10px;
 }
 
-.modal-form-field:focus-within label {
-    color: var(--accent);
+.modal-form-field:nth-child(5) {
+    margin-bottom: 20px;
+}
+
+.modal-form-field:nth-child(6) {
+    margin-bottom: 30px;
 }
 
 .modal-form-field label {
@@ -748,13 +755,22 @@ img {
     color: rgba(117, 117, 117, 1);
 }
 
+.modal-form-field label:last-child {
+    margin-bottom: 0;
+}
+
 .modal-form-field input,
 .modal-form-field textarea{
     padding: 11px 12px;
+
+        
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;
-    
 }
 
 .modal-form-field input {
@@ -766,6 +782,13 @@ img {
     top: 50%;
     left: 12px;
     pointer-events: none;  
+}
+
+.form-input::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--placeholder-color);
 }
 
 
@@ -787,17 +810,67 @@ img {
     height: 120px;
 }
 
-.modal-form-field .checkbox {
+.modal-form-field.checkbox-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-form-field .policy-checkbox {
     appearance: none;
     position: absolute;
     border: 0;
     padding: 0;
 }
 
+.checkbox-icon {
+    position: relative;
+    border: 2px solid var(--check-box-color);
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+.checkbox-icon svg {
+    fill: transparent;
+}
+
+
+.policy-checkbox:checked + .policy-label > span svg {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+
+
+    border-radius: 2px;
+    background-color: var(--accent);
+
+}
+
+
+
+
+.policy-label {
+    display: flex;
+    align-items: center;
+    
+}
+
+
 .policy-link {
     color: var(--accent);
     
 }
+
+.hero-btn[type="submit"] {
+    display: block; 
+    margin: 0 auto; 
+}
+
+.hero-btn[type="submit"]:hover {
+    box-shadow: var(--hero-sahdow-btn)
+}
+
 /* Портфоліо */
 
 /* Фільтр */

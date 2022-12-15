@@ -507,6 +507,7 @@ img {
 
 .footer-container {
     display: flex;
+    justify-content: space-between;
     
 }
 
@@ -566,6 +567,10 @@ img {
     margin-right: 70px;
 }
 
+.social-link-container {
+    margin-right: 93px;
+}
+
 .footer-title {
     margin-bottom: 20px;
 
@@ -600,14 +605,15 @@ img {
 
 /* ПІДПИСКА */
 .subscribe {
-    margin-left: 93px;
-    
-    
+    justify-content: flex-end;   
 }
+
+
 
 .form-field input {
     padding: 15px 16px;
     margin-right: 12px;
+    width: 358px;
 
 
     background-color: var(--transparent-background);
@@ -623,8 +629,14 @@ img {
 
 }
 
+.form-field input:not(placeholder-shown) {
+    color: var(--white-color)
+} 
+
 .form-field input:focus {
     color: var(--white-color);
+    outline: none;
+    border: 1px solid var(--accent);
 }
 
 .subscribe-btn {
@@ -750,7 +762,7 @@ img {
     margin-bottom: 4px;
 
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.167;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 1);
 }
@@ -784,6 +796,16 @@ img {
     pointer-events: none;  
 }
 
+.form-input {
+    padding: 12px;
+    line-height: 1.167;
+    transition: border-color var(--transition-time) var(--transition-cubic);
+}               
+
+.form-input + .form-icon {
+    transition: fill var(--transition-time) var(--transition-cubic);
+}
+
 .form-input::placeholder {
     font-size: 12px;
     line-height: 1.16;
@@ -813,6 +835,8 @@ img {
 .modal-form-field.checkbox-form {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-form-field .policy-checkbox {
@@ -829,22 +853,22 @@ img {
     height: 15px;
     margin-right: 8px;
     border-radius: 2px;
+    align-items: center;
 }
 
 .checkbox-icon svg {
-    fill: transparent;
+    opacity: 0;
+    transition: opacity var(--transition-time) var(--transition-cubic);
 }
-
 
 .policy-checkbox:checked + .policy-label > span svg {
     position: absolute;
     top: -2px;
     left: -2px;
 
-
+    opacity: 1;
     border-radius: 2px;
     background-color: var(--accent);
-
 }
 
 
@@ -853,18 +877,24 @@ img {
 .policy-label {
     display: flex;
     align-items: center;
-    
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
 }
 
 
 .policy-link {
+    margin-left: 5px;
     color: var(--accent);
     
 }
 
 .hero-btn[type="submit"] {
-    display: block; 
-    margin: 0 auto; 
+    display: block;
+    margin: 0 auto;
+    padding: 10px 52px;
+    width: 200px;
+    height: 50px;
 }
 
 .hero-btn[type="submit"]:hover {
